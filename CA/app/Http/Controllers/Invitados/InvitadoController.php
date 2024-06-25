@@ -18,24 +18,17 @@ class InvitadoController extends Controller
 
     
 
-    public function showForm(Request $request)
+    public function a(Request $request)
     {
         $tipoInvitado = $request->get('tipoInvitado');
-        switch ($tipoInvitado) {
-            case 1:
-                $tiposInvitados = TipoInvitado::where('Id_TipoInvitado', 1)->get(); 
-                break;
-            case 2:
-                $tiposInvitados = TipoInvitado::where('Id_TipoInvitado', 2)->get();
-                break;
-            case 3:
-                $tiposInvitados = TipoInvitado::where('Id_TipoInvitado', 3)->get();
-                break;
-            default:
-                return redirect()->back()->with('error', 'Tipo de invitado no válido');
-        }
-            return view('form', compact('tiposInvitados'));
+        return view('Form', ['tipoInvitado' => $tipoInvitado]);
     }
+
+    public function showForm()
+{
+    return view('form');
+}
+
         
     public function CreateInvPeatonal(Request $request)
     {
@@ -76,7 +69,7 @@ class InvitadoController extends Controller
             ]);
 
             //Solicitud Invitado
-            SolicitudInv::create([
+            SolicitudInvitado::create([
                 'FK_Id_Invitados' => $Invitado->Id_Invitados
             ]);
 

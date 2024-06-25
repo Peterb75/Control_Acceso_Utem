@@ -8,5 +8,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/invitados/Peatonal', [InvitadoController::class, 'CreateInvPeatonal']);
+Route::post('/invitados', [InvitadoController::class, 'CreateInvPeatonal']);
 Route::post('/invitados/Vehiculo', [InvitadoController::class, 'CreateInvVehiculo']);
+Route::get('/mostrar-formulario', [InvitadoController::class, 'showForm'])->name('mostrarFormulario');

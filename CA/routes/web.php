@@ -18,5 +18,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/crear-invitado-peatonal', [InvitadoController::class, 'showForm'])->name('form');
-Route::post('/crear-invitado-peatonal', [InvitadoController::class, 'CreateInvPeatonal'])->name('invitado.peatonal.create');
+Route::get('/obtener_tipo_invitado', [InvitadoController::class, 'obtenerTipoInvitadoPorId']);

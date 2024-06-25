@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <form action="{{ route('invitado.peatonal.create') }}" method="POST">
+    <form action="http://localhost:8000/api/invitados" method="POST">
         @csrf
         <div class="form-group">
             <label for="Nombres">Nombres</label>
@@ -28,6 +28,7 @@
             <label for="TipoTransporte">Tipo de Transporte</label>
             <input type="text" class="form-control" id="TipoTransporte" name="TipoTransporte" required maxlength="60">
         </div>
+        
         <div class="form-group">
             <label for="FK_TipoInvitado">Tipo de Invitado</label>
             <input type="number" class="form-control" id="FK_TipoInvitado" name="FK_TipoInvitado" required>
@@ -53,3 +54,5 @@
 </div>
 </body>
 </html>
+
+

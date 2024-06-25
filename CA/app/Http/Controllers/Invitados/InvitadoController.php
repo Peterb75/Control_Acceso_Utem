@@ -16,20 +16,25 @@ use Illuminate\Support\Facades\DB;
 class InvitadoController extends Controller
 {
 
+    public function obtenerTipoInvitadoPorId(Request $request)
+    {
+        // Obtener el ID del tipo de invitado desde la solicitud GET
+        $id = $request->input('id');
+
+        // Buscar el tipo de invitado en la base de datos
+        $tipoInvitado = TipoInvitado::find($id);
+
+        if (!$tipoInvitado) {
+            return response()->json(['error' => 'Tipo de invitado no encontrado'], 404);
+        }
+
+        // Devolver el tipo de invitado encontrado
+        return response()->json($tipoInvitado, 200);
+        }
+
     
 
-    public function a(Request $request)
-    {
-        $tipoInvitado = $request->get('tipoInvitado');
-        return view('Form', ['tipoInvitado' => $tipoInvitado]);
-    }
 
-    public function showForm()
-{
-    return view('form');
-}
-
-        
     public function CreateInvPeatonal(Request $request)
     {
         DB::beginTransaction();

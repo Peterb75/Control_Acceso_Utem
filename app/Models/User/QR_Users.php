@@ -12,7 +12,7 @@ class QR_Users extends Model
 
     protected $fillable = [
         'FK_Id_User',
-        'Activo',
+        'Activoqr',
         'QR_imgUser'
     ];
 

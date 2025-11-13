@@ -8,7 +8,7 @@ class Vehiculos extends Model
 {
     protected $table = 'Vehiculos';
     protected $primaryKey = 'Id_Vehicular';
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'FK_Id_Persona',
@@ -20,10 +20,8 @@ class Vehiculos extends Model
         return $this->belongsTo('App\Models\Persona\Personas', 'FK_Id_Persona', 'Id_Persona');
     }
 
-    public function datov()
+    public function datoVehiculo()
     {
-        return $this->belongsTo('App\Models\Vehiculo\DatoVehiculos', 'FK_Id_DatoV', 'Id_DatoV');
+        return $this->hasOne(DatoVehiculos::class, 'Id_DatoV', 'FK_Id_DatoV');
     }
-
-
 }

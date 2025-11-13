@@ -6,17 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class SolicitudInvitado extends Model
 {
-    protected $table = 'Solictud_Vis';
-    protected $primaryKey = 'Id_solicitud';
-    public $timestamps = false;
+    protected $table = 'solicitud_vis';
+    protected $primaryKey = 'Id_Solicitud';
+    public $timestamps = true;
 
     protected $fillable = [
-        'FK_Id_Invitados'
+        'FK_Id_Invitados',
+        'Estado',
+        'Motivo_Rechazo',
+        'FK_Id_UserAccion',
     ];
 
-    public function Invitados()
+    public function invitados()
     {
-        return $this->belongsTo('App\Models\Invitado\Invitados', 'FK_Id_Invitados', 'Id_Invitados');
+        return $this->belongsTo(Invitados::class, 'FK_Id_Invitados', 'Id_Invitados');
+    }
+
+    public function User()
+    {
+        return $this->belongsTo('App\Models\User\Users', 'FK_Id_UserAceptado', 'Id_Users');
     }
 
 }

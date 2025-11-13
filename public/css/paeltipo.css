@@ -1,0 +1,66 @@
+/* === FUENTE Y COLORES === */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #2d3748;
+    margin: 0;
+    padding: 0;
+}
+
+.text-teal {
+    color: #00a78a;
+}
+
+/* === TARJETA CENTRAL === */
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* === BOTONES PERSONALIZADOS === */
+.btn-invitado {
+    background-color: #00a78a;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 167, 138, 0.2);
+}
+
+.btn-invitado:hover {
+    background-color: #008d76;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 167, 138, 0.3);
+}
+
+.btn-invitado:active {
+    transform: scale(0.97);
+}
+
+/* === ICONOS EN BOTONES === */
+.btn-invitado i {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+/* === ANIMACIÓN === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 576px) {
+    .card {
+        padding: 2rem 1.5rem;
+    }
+
+    .btn-invitado {
+        font-size: 1.1rem;
+        padding: 0.9rem;
+    }
+}

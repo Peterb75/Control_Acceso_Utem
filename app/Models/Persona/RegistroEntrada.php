@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class RegistroEntrada extends Model
 {
-    protected $table = 'Registro_Entrada';
+    protected $table = 'Registro_Entradas';
     protected $primaryKey = 'Id_Entrada';
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'FK_Id_Persona',
-        'Entrada',
+
     ];
 
     public function persona()

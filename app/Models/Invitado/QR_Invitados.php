@@ -11,14 +11,15 @@ class QR_Invitados extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'FK_Id_Aceptado',
+        'FK_Id_Solicitud',
         'Activo',
         'QR_invit',
     ];
 
-    public function persona()
+    public function PersonaInv()
     {
-        return $this->belongsTo('App\Models\Invitado\VisitAceptados', 'FK_Id_Aceptado', 'Id_Aceptado');
+        return $this->belongsTo('App\Models\Invitado\SolicitudInvitado', 'FK_Id_Solicitud', 'Id_Aceptado');
     }
+
 
 }

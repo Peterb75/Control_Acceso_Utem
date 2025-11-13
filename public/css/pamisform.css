@@ -1,0 +1,66 @@
+/* === ESTILOS GENERALES === */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #2d3748;
+    margin: 0;
+    padding: 0;
+}
+
+.text-teal {
+    color: #00a78a;
+}
+
+/* === CARD (contenedor principal) === */
+.card {
+    border-radius: 1rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* === BOTÓN PRINCIPAL === */
+.btn-primary-custom {
+    background-color: #00a78a;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 167, 138, 0.2);
+}
+
+.btn-primary-custom:hover {
+    background-color: #008d76;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 167, 138, 0.3);
+}
+
+.btn-primary-custom:active {
+    transform: scale(0.97);
+}
+
+/* === CAMPOS DE FORMULARIO === */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #00a78a;
+    box-shadow: 0 0 0 0.2rem rgba(0, 167, 138, 0.25);
+}
+
+/* === ANIMACIÓN === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 576px) {
+    .card {
+        padding: 2rem 1.5rem;
+    }
+}

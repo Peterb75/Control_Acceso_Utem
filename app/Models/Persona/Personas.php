@@ -3,6 +3,7 @@
 namespace App\Models\Persona;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Vehiculo\Vehiculos; 
 
 class Personas extends Model
 {
@@ -16,6 +17,12 @@ class Personas extends Model
         'ApellidoM',
         'Correo',
         'TipoTransporte',
+        'TipoVehiculo'
     ];
 
+    public function vehiculos()
+    {
+        return $this->hasMany(Vehiculos::class, 'FK_Id_Persona', 'Id_Persona');
+    }
+    
 }

@@ -8,7 +8,7 @@ class DatoVehiculos extends Model
 {
     protected $table = 'DatoV';
     protected $primaryKey = 'Id_DatoV';
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'MarcaV',
@@ -16,4 +16,9 @@ class DatoVehiculos extends Model
         'ColorV',
         'Placas',
     ];
+
+    public function vehiculos()
+    {
+        return $this->hasMany(Vehiculos::class, 'FK_Id_DatoV');
+    }
 }
